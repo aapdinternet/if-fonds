@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Innovationsfonds – Alt | Neu | JCE-Code</title>
+<style>
+  :root{--purple:#7d2b8e;--old:#b0453a;--new:#2e7d46;--ink:#1c2023;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:#eceef0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.5;}
+  header{background:#fff;border-bottom:3px solid var(--purple);padding:20px 26px;position:sticky;top:0;z-index:5;}
+  header h1{margin:0 0 6px;font-size:19px;}
+  header p{margin:0;font-size:13px;color:#43494d;max-width:1000px;}
+  .wrap{max-width:1560px;margin:20px auto;padding:0 18px;}
+  .card{background:#fff;border-radius:8px;padding:16px 18px;margin-bottom:18px;box-shadow:0 1px 8px rgba(0,0,0,.06);}
+  .card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
+  .pill{background:#f1e7f4;color:var(--purple);font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px;}
+  .num{font-size:11.5px;color:#9aa1a6;font-weight:600;}
+  .cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;align-items:start;}
+  @media(max-width:1080px){.cols{grid-template-columns:1fr;}}
+  .col{min-width:0;}
+  .lab{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;padding:3px 0;border-bottom:2px solid;margin-bottom:8px;}
+  .lab-old{color:var(--old);border-color:var(--old);}
+  .lab-new{color:var(--new);border-color:var(--new);}
+  .lab-code{color:var(--purple);border-color:var(--purple);}
+  .mini-title{font-size:13px;font-weight:700;color:#33393d;margin-bottom:7px;min-height:1.2em;}
+  .prev{border:1px solid #e4e7ea;border-radius:6px;padding:11px 13px;background:#fcfcfd;font-size:13.5px;overflow-wrap:break-word;}
+  .col-old .prev{background:#fdf6f5;}
+  .col-new .prev{background:#f5fbf7;}
+  .prev h1{font-size:17px;margin:.2em 0 .5em;}
+  .prev h2{font-size:15px;margin:.2em 0 .5em;}
+  .prev h3{font-size:14.5px;margin:.2em 0 .5em;}
+  .prev h4{font-size:13.5px;margin:.6em 0 .2em;color:var(--purple);}
+  .prev a{color:var(--purple);}
+  .prev img{max-width:100%;height:auto;border:1px solid #e4e7ea;border-radius:4px;}
+  .prev ul,.prev ol{margin:.3em 0 .6em;padding-left:1.35em;}
+  .prev table{width:100%;border-collapse:collapse;font-size:12px;}
+  .prev table td{border:1px solid #d9c4cf;padding:5px 7px;vertical-align:top;}
+  .prev .none{color:#9aa1a6;}
+  textarea.code{width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;line-height:1.45;color:#2b2f33;background:#f7f8f9;border:1px solid #d9dde0;border-radius:6px;padding:10px 11px;resize:vertical;white-space:pre;}
+</style>
+</head>
+<body>
+<header>
+  <h1>Innovationsfonds &ndash; &Uuml;bersicht: Alt &nbsp;|&nbsp; Neu &nbsp;|&nbsp; JCE-Code</h1>
+  <p>Pro Sektion links die <b>bisherige</b> Fassung (aktuell live), in der Mitte die <b>neue</b> Fassung als Vorschau, rechts der <b>JCE-HTML-Code</b> zum Kopieren (nur <code>p, ul, ol, h1&ndash;h4, a, strong, br, img, table</code> &ndash; keine Klassen/Inline-Styles; D/L/H mit <code>&lt;strong&gt;</code>). Grafik <code>Ablauf-Grafik-neu.png</code> vorab in den Medienmanager laden und <code>src</code> anpassen.</p>
+</header>
+<div class="wrap">
+<section class="card">
+  <div class="card-top"><span class="pill">Seitenkopf / Einleitung</span><span class="num">Block 01</span></div>
+  <div class="cols">
+    <div class="col col-old">
+      <div class="lab lab-old">Alt (bisher)</div>
+      <div class="mini-title">Ziele (bisheriger Einleitungstext)</div>
+      <div class="prev"><p>Die beiden DLH-Innovationsfonds der Schulen der Berufsbildung und der Mittelschulen des Kantons Zürich fördern die Entwicklung und Verbreitung von innovativen, digital gestützten Unterrichtsprojekten durch die Lehrpersonen. Die DLH-Innovationsfonds tragen so zur praxisnahen Umsetzung des digitalen Wandels an den Schulen bei.</p>
+<p>Über den DLH-Innovationsfonds geförderte Projekte stehen allen Lehrpersonen des Kantons Zürich zur Verfügung.</p>
+<p><a href="#">Innovationsfonds-Flyer</a></p></div>
+    </div>
+    <div class="col col-new">
+      <div class="lab lab-new">Neu (Vorschau)</div>
+      <div class="mini-title">Einleitung</div>
+      <div class="prev"><p><a href="https://www.dlh.zh.ch/home/innovationsfonds/projektvorstellungen/uebersicht" target="_blank" rel="noopener"><strong>Alle-Projekte-im-Überblick</strong></a></p>
+<h1>DLH-Innovationsfonds Schulen der Berufsbildung und Mittelschulen des Kantons Zürich</h1>
+<h2>Haben Sie eine Idee für Ihren Unterricht?</h2>
+<p>Der DLH-Innovationsfonds unterstützt Lehrpersonen an Berufsfachschulen und Mittelschulen im Kanton Zürich dabei, Unterrichtsideen mit digitaler Unterstützung auszuprobieren, zu optimieren und weiterzuentwickeln. Das können kleine innovative Pilotprojekte sein, grössere Vertiefungsprojekte mit didaktischem Fokus oder Projekte zur nachhaltigen Verbreitung bewährter Innovationen. Die daraus hervorgehenden Produkte und Erkenntnisse werden <a href="https://www.dlh.zh.ch/home/innovationsfonds/projektvorstellungen/uebersicht" target="_blank" rel="noopener"><strong>hier</strong></a> allen Lehrpersonen zur Verfügung gestellt.</p>
+<p><a href="https://dlh.zh.ch/home/downloads/send/5-innovationsfonds/210-innovationsfonds-flyer" target="_blank" rel="noopener">Innovationsfonds-Flyer</a></p></div>
+    </div>
+    <div class="col col-code">
+      <div class="lab lab-code">JCE-HTML-Code (kopieren)</div>
+      <div class="mini-title">&nbsp;</div>
+      <textarea class="code" readonly rows="7" onclick="this.select()">&lt;p&gt;&lt;a href=&quot;https://www.dlh.zh.ch/home/innovationsfonds/projektvorstellungen/uebersicht&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;strong&gt;Alle-Projekte-im-Überblick&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;DLH-Innovationsfonds Schulen der Berufsbildung und Mittelschulen des Kantons Zürich&lt;/h1&gt;
+&lt;h2&gt;Haben Sie eine Idee für Ihren Unterricht?&lt;/h2&gt;
+&lt;p&gt;Der DLH-Innovationsfonds unterstützt Lehrpersonen an Berufsfachschulen und Mittelschulen im Kanton Zürich dabei, Unterrichtsideen mit digitaler Unterstützung auszuprobieren, zu optimieren und weiterzuentwickeln. Das können kleine innovative Pilotprojekte sein, grössere Vertiefungsprojekte mit didaktischem Fokus oder Projekte zur nachhaltigen Verbreitung bewährter Innovationen. Die daraus hervorgehenden Produkte und Erkenntnisse werden &lt;a href=&quot;https://www.dlh.zh.ch/home/innovationsfonds/projektvorstellungen/uebersicht&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;strong&gt;hier&lt;/strong&gt;&lt;/a&gt; allen Lehrpersonen zur Verfügung gestellt.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://dlh.zh.ch/home/downloads/send/5-innovationsfonds/210-innovationsfonds-flyer&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Innovationsfonds-Flyer&lt;/a&gt;&lt;/p&gt;</textarea>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="card-top"><span class="pill">Abschnittstitel</span><span class="num">Block 02</span></div>
+  <div class="cols">
+    <div class="col col-old">
+      <div class="lab lab-old">Alt (bisher)</div>
+      <div class="mini-title">Rahmenbedingungen</div>
+      <div class="prev"><p>Rahmenbedingungen</p></div>
+    </div>
+    <div class="col col-new">
+      <div class="lab lab-new">Neu (Vorschau)</div>
+      <div class="mini-title">So fördern wir</div>
+      <div class="prev"><h3>So fördern wir</h3></div>
+    </div>
+    <div class="col col-code">
+      <div class="lab lab-code">JCE-HTML-Code (kopieren)</div>
+      <div class="mini-title">&nbsp;</div>
+      <textarea class="code" readonly rows="4" onclick="this.select()">&lt;h3&gt;So fördern wir&lt;/h3&gt;</textarea>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="card-top"><span class="pill">Akkordeon · So fördern wir</span><span class="num">Block 03</span></div>
+  <div class="cols">
+    <div class="col col-old">
+      <div class="lab lab-old">Alt (bisher)</div>
+      <div class="mini-title">Was ist Innovation?</div>
+      <div class="prev"><p>Innovation in Schulprojekten ist schwer zu definieren, da sie viele Formen annehmen kann. Sie umfasst sowohl neue Ansätze als auch die Weiterentwicklung bestehender Projekte. Ziel ist es, das Lernen und Lehren für Schüler:innen/Lernende sowie Lehrpersonen zu verbessern und zeitgemäss zu gestalten.</p>
+<p>Erreichen lässt sich Innovation z.&nbsp;B. durch die Einführung neuer Lehrmethoden oder eines interdisziplinären Ansatzes, den Einsatz moderner Technologien oder die Anpassung des Unterrichts an individuelle Bedürfnisse. Auch die kreative Weiterentwicklung bereits vorhandener Projekte zählt als Innovation. Es geht darum, traditionelle Methoden zu hinterfragen und den Unterricht lernwirksamer zu gestalten.</p></div>
+    </div>
+    <div class="col col-new">
+      <div class="lab lab-new">Neu (Vorschau)</div>
+      <div class="mini-title">Was ist Innovation? (Unsere drei Projektarten)</div>
+      <div class="prev"><p>Innovation umfasst sowohl:</p>
+<ul>
+  <li>das Erkunden neuer Ansätze, Methoden, Technologien etc. oder die Anpassung des Unterrichts an individuelle Bedürfnisse (sog. <strong>D</strong>igital&nbsp;Explorer-Projekte) als auch</li>
+  <li>die Weiterentwicklung bestehender Projekte/Innovationen:
+    <ul>
+      <li>durch nachhaltige Integration im Unterricht bzw. der Unterrichtsvorbereitung (sog. <strong>L</strong>earning&nbsp;Incubator-Projekte) oder</li>
+      <li>durch deren Verbreitung über das eigene Projektteam, das Fach, den Lehrgang und die Schule hinaus (sog. <strong>H</strong>ub-Scaler-Projekte).</li>
+    </ul>
+  </li>
+</ul>
+<p>Entscheidend ist nicht die Grösse eines Projekts, sondern dass neue Erfahrungen entstehen und der Unterricht weiterentwickelt wird.</p></div>
+    </div>
+    <div class="col col-code">
+      <div class="lab lab-code">JCE-HTML-Code (kopieren)</div>
+      <div class="mini-title">&nbsp;</div>
+      <textarea class="code" readonly rows="13" onclick="this.select()">&lt;p&gt;Innovation umfasst sowohl:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;das Erkunden neuer Ansätze, Methoden, Technologien etc. oder die Anpassung des Unterrichts an individuelle Bedürfnisse (sog. &lt;strong&gt;D&lt;/strong&gt;igital&amp;nbsp;Explorer-Projekte) als auch&lt;/li&gt;
+  &lt;li&gt;die Weiterentwicklung bestehender Projekte/Innovationen:
+    &lt;ul&gt;
+      &lt;li&gt;durch nachhaltige Integration im Unterricht bzw. der Unterrichtsvorbereitung (sog. &lt;strong&gt;L&lt;/strong&gt;earning&amp;nbsp;Incubator-Projekte) oder&lt;/li&gt;
+      &lt;li&gt;durch deren Verbreitung über das eigene Projektteam, das Fach, den Lehrgang und die Schule hinaus (sog. &lt;strong&gt;H&lt;/strong&gt;ub-Scaler-Projekte).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Entscheidend ist nicht die Grösse eines Projekts, sondern dass neue Erfahrungen entstehen und der Unterricht weiterentwickelt wird.&lt;/p&gt;</textarea>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="card-top"><span class="pill">Akkordeon · So fördern wir</span><span class="num">Block 04</span></div>
+  <div class="cols">
+    <div class="col col-old">
+      <div class="lab lab-old">Alt (bisher)</div>
+      <div class="mini-title">Wer kann sich bewerben?</div>
+      <div class="prev"><p>Der DLH-Innovationsfonds unterstützt Lehrpersonenteams (mindestens 2 Personen), die an öffentlichen Schulen auf Stufe Sek&nbsp;II des Kantons Zürich angestellt sind. Dies sind alle kantonalen Schulen der Zürcher Sek&nbsp;II und die privat geführten Schulen der Berufsbildung mit kantonalem Leistungsauftrag.</p>
+<p>Die Lehrpersonen müssen weder an derselben Schule angestellt sein noch dasselbe Fach unterrichten. Ganz im Gegenteil: fach- und schulübergreifende Projekte werden begrüsst. Die Rollen- und Aufgabengestaltung innerhalb der Teams ist Sache der Lehrpersonen.</p></div>
+    </div>
+    <div class="col col-new">
+      <div class="lab lab-new">Neu (Vorschau)</div>
+      <div class="mini-title">Wer kann ein Projekt einreichen?</div>
+      <div class="prev"><p>Der DLH-Innovationsfonds unterstützt Lehrpersonenteams aus mindestens 2 Personen, die an öffentlichen Schulen auf Stufe Sek&nbsp;II des Kantons Zürich angestellt sind. Dies sind alle kantonalen Schulen der Zürcher Sek&nbsp;II und die privat geführten Schulen der Berufsbildung mit kantonalem Leistungsauftrag.</p>
+<p>Sehr gerne dürfen die Teams sich auch schul- und fachübergreifend zusammensetzen.</p></div>
+    </div>
+    <div class="col col-code">
+      <div class="lab lab-code">JCE-HTML-Code (kopieren)</div>
+      <div class="mini-title">&nbsp;</div>
+      <textarea class="code" readonly rows="4" onclick="this.select()">&lt;p&gt;Der DLH-Innovationsfonds unterstützt Lehrpersonenteams aus mindestens 2 Personen, die an öffentlichen Schulen auf Stufe Sek&amp;nbsp;II des Kantons Zürich angestellt sind. Dies sind alle kantonalen Schulen der Zürcher Sek&amp;nbsp;II und die privat geführten Schulen der Berufsbildung mit kantonalem Leistungsauftrag.&lt;/p&gt;
+&lt;p&gt;Sehr gerne dürfen die Teams sich auch schul- und fachübergreifend zusammensetzen.&lt;/p&gt;</textarea>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="card-top"><span class="pill">Akkordeon · So fördern wir</span><span class="num">Block 05</span></div>
+  <div class="cols">
+    <div class="col col-old">
+      <div class="lab lab-old">Alt (bisher)</div>
+      <div class="mini-title">Welches sind die Förderkriterien?</div>
+      <div class="prev"><p>Projekteingaben werden nach den folgenden Kriterien bewertet:</p>
+<table border="1" cellpadding="6" style="border-collapse:collapse">
+<tr><td><strong>Formale Kriterien</strong></td><td>Folgende formale Kriterien müssen erfüllt sein, damit der Projektantrag der Jury unterbreitet werden kann.</td></tr>
+<tr><td>Teamarbeit</td><td>Ein Unterrichtsprojekt wird von einer Lehrpersonengruppe gemeinsam entwickelt. Die Projektgruppe definiert die Rollen der einzelnen Mitglieder. Die entlastungsberechtigten Lehrpersonen sind an einer Schule der Sekundarstufe II des Kantons Zürich angestellt. Die Projektleitung verfügt über eine unbefristete Anstellung im Kanton Zürich.</td></tr>
+<tr><td>Unterstützung durch die Schulleitung</td><td>Die Schulleitung wird über das Unterrichtsprojekt informiert und unterstützt es. Für Projekte in der Berufsbildung ist zudem eine schriftliche Bewilligung der Schulleitung erforderlich.</td></tr>
+<tr><td><strong>Materielle Kriterien</strong></td><td>Die Jury beurteilt die Unterstützungswürdigkeit auf Grund der untenstehenden fünf materiellen Kriterien. Der Nachweis der Unterstützungswürdigkeit der einzelnen Projektarbeitsschritte obliegt dem Antragsteam.</td></tr>
+<tr><td>Innovation</td><td>Das Unterrichtsprojekt hat Innovationspotential. Es basiert auf einem originellen, zukunftsweisenden bzw. fantasievollen pädagogischen, didaktischen, technischen oder organisatorischen Ansatz.</td></tr>
+<tr><td>Didaktisches Konzept</td><td>Das didaktisch-unterrichtsorganisatorische Konzept bildet den Kern des Unterrichtsprojekts. Es verbindet Innovation und Digitalität sowie die potenziell breite und langfristige Nutzung.</td></tr>
+<tr><td>Digitalität</td><td>Im Unterrichtsprojekt werden digitale Kompetenzen gefördert: Anwendungskompetenz, Medienkompetenz oder Informatikkompetenz.</td></tr>
+<tr><td>Evaluation</td><td>Das Unterrichtsprojekt wird mindestens einmal mit einer Klasse durchgeführt, reflektiert und evaluiert. Das Projekt gilt als abgeschlossen, wenn die Evaluation erfolgt ist.</td></tr>
+<tr><td>Breite und langfristige Nutzung</td><td>Das Unterrichtsprojekt ist für viele Lehrpersonen innerhalb eines Fachgebiets oder auch fachübergreifend anwendbar und auf lange Frist nutzbar.</td></tr>
+</table></div>
+    </div>
+    <div class="col col-new">
+      <div class="lab lab-new">Neu (Vorschau)</div>
+      <div class="mini-title">Welche Projekte werden unterstützt? (Förderkriterien)</div>
+      <div class="prev"><p>Projekte sollten einen konkreten didaktischen Mehrwert für die Schülerinnen und Schüler sowie Lernenden bieten und im Unterricht erprobt werden. Unsere Jury bewertet die Anträge nach den folgenden Kriterien:</p>
+<p><strong>[Kriterientabelle mit drei Projektarten]</strong> &ndash; in der Vorlage nur als Platzhalter vorhanden, der eigentliche Tabelleninhalt fehlt noch.</p>
+<p>Je nach gewählter Projektart werden die Kriterien etwas anders gewichtet (siehe auch Tabelle):</p>
+<ul>
+  <li><strong>D</strong>igital&nbsp;Explorer-Projekte fokussieren auf das unkomplizierte Ausprobieren von innovativen Ideen.</li>
+  <li><strong>L</strong>earning&nbsp;Incubator-Projekte konzentrieren sich auf die Optimierung des Lern-/Lehrerfolgs einer bestehenden/getesteten Innovation.</li>
+  <li><strong>H</strong>ub-Scaler-Projekte bringen optimierte Projekte in die breite und langfristige Anwendung.</li>
+</ul></div>
+    </div>
+    <div class="col col-code">
+      <div class="lab lab-code">JCE-HTML-Code (kopieren)</div>
+      <div class="mini-title">&nbsp;</div>
+      <textarea class="code" readonly rows="10" onclick="this.select()">&lt;p&gt;Projekte sollten einen konkreten didaktischen Mehrwert für die Schülerinnen und Schüler sowie Lernenden bieten und im Unterricht erprobt werden. Unsere Jury bewertet die Anträge nach den folgenden Kriterien:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[Kriterientabelle mit drei Projektarten]&lt;/strong&gt; &amp;ndash; in der Vorlage nur als Platzhalter vorhanden, der eigentliche Tabelleninhalt fehlt noch.&lt;/p&gt;
+&lt;p&gt;Je nach gewählter Projektart werden die Kriterien etwas anders gewichtet (siehe auch Tabelle):&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;D&lt;/strong&gt;igital&amp;nbsp;Explorer-Projekte fokussieren auf das unkomplizierte Ausprobieren von innovativen Ideen.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;L&lt;/strong&gt;earning&amp;nbsp;Incubator-Projekte konzentrieren sich auf die Optimierung des Lern-/Lehrerfolgs einer bestehenden/getesteten Innovation.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;H&lt;/strong&gt;ub-Scaler-Projekte bringen optimierte Projekte in die breite und langfristige Anwendung.&lt;/li&gt;
+&lt;/ul&gt;</textarea>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="card-top"><span class="pill">Akkordeon · So fördern wir</span><span class="num">Block 06</span></div>
+  <div class="cols">
+    <div class="col col-old">
+      <div class="lab lab-old">Alt (bisher)</div>
+      <div class="mini-title">Wie hoch sind die gesprochenen Unterstützungsbeiträge?</div>
+      <div class="prev"><p>Der Innovationsfonds unterstützt Projekte im Rahmen von 150-800 Arbeitsstunden. Grössere Projekte, die den Rahmen von 800 Arbeitsstunden überschreiten, werden als Schulentwicklungsprojekte definiert. Hier ist das MBA federführend. Für kleinere Projekte, die den Rahmen von 150 Arbeitsstunden unterschreiten, empfehlen wir einen Antrag direkt an die Schulleitung.</p>
+<p>Falls für das Projekt zusätzliche Mittel als nötig erachtet werden - z.B. für Lizenzen, externe Fachberatung, technische Infrastruktur - müssen diese bei der Eingabe des Projektantrages begründet und mit einer aktuellen Offerte belegt werden. Maximal mögliche Sachzuwendung pro Projekt: CHF 5000.-. Ein nachträglicher Anspruch auf Finanzierung kann nicht geltend gemacht werden.</p></div>
+    </div>
+    <div class="col col-new">
+      <div class="lab lab-new">Neu (Vorschau)</div>
+      <div class="mini-title">In welchem Umfang unterstützen wir?</div>
+      <div class="prev"><p>Der Innovationsfonds unterstützt Projekte im Rahmen von 160&ndash;800 Arbeitsstunden. Für <strong>D</strong>igital Explorer-Projekte sind es pauschal 160 Stunden, für <strong>L</strong>earning Incubator-Projekte 160&ndash;800 h, für <strong>H</strong>ub-Scaler-Projekte 160&ndash;400 Stunden.</p>
+<p>Zusätzliche Kosten bis maximal CHF&nbsp;5000, zum Beispiel für Lizenzen, externe Fachberatung oder technische Infrastruktur sind finanzierbar, müssen im Projektantrag jedoch begründet werden.</p>
+<p>Für kleinere Projekte empfehlen wir einen Antrag direkt an die Schulleitung.</p>
+<p>Grössere Projekte, die den Rahmen von 800 Arbeitsstunden überschreiten, werden als Schulentwicklungsprojekte betrachtet. Hier ist das MBA federführend.</p>
+<p>Ein nachträglicher Anspruch auf Finanzierung kann nicht geltend gemacht werden.</p></div>
+    </div>
+    <div class="col col-code">
+      <div class="lab lab-code">JCE-HTML-Code (kopieren)</div>
+      <div class="mini-title">&nbsp;</div>
+      <textarea class="code" readonly rows="7" onclick="this.select()">&lt;p&gt;Der Innovationsfonds unterstützt Projekte im Rahmen von 160&amp;ndash;800 Arbeitsstunden. Für &lt;strong&gt;D&lt;/strong&gt;igital Explorer-Projekte sind es pauschal 160 Stunden, für &lt;strong&gt;L&lt;/strong&gt;earning Incubator-Projekte 160&amp;ndash;800 h, für &lt;strong&gt;H&lt;/strong&gt;ub-Scaler-Projekte 160&amp;ndash;400 Stunden.&lt;/p&gt;
+&lt;p&gt;Zusätzliche Kosten bis maximal CHF&amp;nbsp;5000, zum Beispiel für Lizenzen, externe Fachberatung oder technische Infrastruktur sind finanzierbar, müssen im Projektantrag jedoch begründet werden.&lt;/p&gt;
+&lt;p&gt;Für kleinere Projekte empfehlen wir einen Antrag direkt an die Schulleitung.&lt;/p&gt;
+&lt;p&gt;Grössere Projekte, die den Rahmen von 800 Arbeitsstunden überschreiten, werden als Schulentwicklungsprojekte betrachtet. Hier ist das MBA federführend.&lt;/p&gt;
+&lt;p&gt;Ein nachträglicher Anspruch auf Finanzierung kann nicht geltend gemacht werden.&lt;/p&gt;</textarea>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="card-top"><span class="pill">Akkordeon · So fördern wir</span><span class="num">Block 07</span></div>
+  <div class="cols">
+    <div class="col col-old">
+      <div class="lab lab-old">Alt (bisher)</div>
+      <div class="mini-title">Wie lange dauert ein Projekt?</div>
+      <div class="prev"><p>Ein Projekt dauert in der Regel maximal drei Jahre, wobei drei Phasen durchlaufen werden: 1) Planung und Ausarbeitung 2) Einsatz im Unterricht 3) Evaluation. Das Projekt gilt als abgeschlossen, wenn das Projekt mindestens einmal von der Lehrperson mit einer Klasse durchgeführt wurde und die Evaluation erfolgt ist.</p>
+<p>Die Evaluation soll zeigen, inwieweit mit dem entwickelten Unterrichtsprojekt die beabsichtigten pädagogischen Ziele in dieser Erstumsetzung bereits erreicht werden konnten und welche &bdquo;Learnings&ldquo; daraus gezogen werden können (Was hat in der Umsetzung geklappt, was gar nicht? Wo liegt Entwicklungspotential, wo nicht?). Diese Dokumentation publiziert der DLH und macht die Erkenntnisse somit einem breiten Lehrpersonenkreis zugänglich.</p></div>
+    </div>
+    <div class="col col-new">
+      <div class="lab lab-new">Neu (Vorschau)</div>
+      <div class="mini-title">Wie läuft ein Projekt ab?</div>
+      <div class="prev"><p>Ein Projekt dauert in der Regel maximal drei Jahre und durchläuft folgende Phasen:</p>
+<ol>
+  <li>Idee entwickeln und planen</li>
+  <li>Im Unterricht ausprobieren</li>
+  <li>Erfahrungen auswerten
+    <ul>
+      <li>Was hat im Unterricht gut funktioniert?</li>
+      <li>Welche Erkenntnisse wurden gewonnen?</li>
+      <li>Wo besteht Entwicklungspotenzial?</li>
+    </ul>
+  </li>
+</ol>
+<p>Das Projekt gilt als abgeschlossen, wenn die Projektresultate und Erfahrungen aus dem Projekt sowie allfällige Produkte auf der <a href="https://dlh.zh.ch/home/innovationsfonds/projektvorstellungen/uebersicht" target="_blank" rel="noopener">DLH-Webseite</a> allen Lehrpersonen zur Verfügung gestellt sind.</p></div>
+    </div>
+    <div class="col col-code">
+      <div class="lab lab-code">JCE-HTML-Code (kopieren)</div>
+      <div class="mini-title">&nbsp;</div>
+      <textarea class="code" readonly rows="15" onclick="this.select()">&lt;p&gt;Ein Projekt dauert in der Regel maximal drei Jahre und durchläuft folgende Phasen:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Idee entwickeln und planen&lt;/li&gt;
+  &lt;li&gt;Im Unterricht ausprobieren&lt;/li&gt;
+  &lt;li&gt;Erfahrungen auswerten
+    &lt;ul&gt;
+      &lt;li&gt;Was hat im Unterricht gut funktioniert?&lt;/li&gt;
+      &lt;li&gt;Welche Erkenntnisse wurden gewonnen?&lt;/li&gt;
+      &lt;li&gt;Wo besteht Entwicklungspotenzial?&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Das Projekt gilt als abgeschlossen, wenn die Projektresultate und Erfahrungen aus dem Projekt sowie allfällige Produkte auf der &lt;a href=&quot;https://dlh.zh.ch/home/innovationsfonds/projektvorstellungen/uebersicht&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;DLH-Webseite&lt;/a&gt; allen Lehrpersonen zur Verfügung gestellt sind.&lt;/p&gt;</textarea>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="card-top"><span class="pill">Abschnittstitel + Bild</span><span class="num">Block 08</span></div>
+  <div class="cols">
+    <div class="col col-old">
+      <div class="lab lab-old">Alt (bisher)</div>
+      <div class="mini-title">Ablauf (bisherige Grafik auf der Website)</div>
+      <div class="prev"><p><em>Ablauf-Grafik der bisherigen Website (separate Datei).</em></p></div>
+    </div>
+    <div class="col col-new">
+      <div class="lab lab-new">Neu (Vorschau)</div>
+      <div class="mini-title">Ablauf (neue Grafik)</div>
+      <div class="prev"><h3>Ablauf</h3>
+<p><img src="Ablauf-Grafik-neu.png" alt="Ablauf Innovationsfonds: 1 Antrag ausarbeiten, 2 einreichen, 3 formelle Prüfung, 4 Jurierung, 5 Umsetzung, 6 Abgabe"></p></div>
+    </div>
+    <div class="col col-code">
+      <div class="lab lab-code">JCE-HTML-Code (kopieren)</div>
+      <div class="mini-title">&nbsp;</div>
+      <textarea class="code" readonly rows="4" onclick="this.select()">&lt;h3&gt;Ablauf&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;Ablauf-Grafik-neu.png&quot; alt=&quot;Ablauf Innovationsfonds: 1 Antrag ausarbeiten, 2 einreichen, 3 formelle Prüfung, 4 Jurierung, 5 Umsetzung, 6 Abgabe&quot;&gt;&lt;/p&gt;</textarea>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="card-top"><span class="pill">Akkordeon · Ablauf</span><span class="num">Block 09</span></div>
+  <div class="cols">
+    <div class="col col-old">
+      <div class="lab lab-old">Alt (bisher)</div>
+      <div class="mini-title">Wo finde ich Ideen für Innovationen in meinem Bildungsbereich?</div>
+      <div class="prev"><p>Bis die Themen bildungsrelevant werden, vergeht meistens eine gewisse Zeit. Es lohnt sich daher, einen Blick nach vorne zu werfen.</p>
+<p><strong>Innovative Betriebe und Forschungseinrichtungen:</strong> Es gibt einige Lehrbetriebe und Hochschulen, die sich nahe an der technologischen Entwicklung bewegen und die digitalen Prozesse, Dienstleistungen und Produkte in ihren Arbeits- und Forschungsalltag integriert haben.</p>
+<p><strong>Geschäfts- und Technologietrends:</strong> Gartner ist eine Firma, die sich auf Geschäfts- und Technologietrends spezialisiert hat. Bekannt ist der <a href="#">Gartner Hype Cycle</a>.</p>
+<p><strong>Bildungsinnovation:</strong> Ein guter Ausgangspunkt für den Technologiewandel in der Bildung ist der &bdquo;EDUCAUSE Horizon Report&trade; │ Teaching and Learning Edition&ldquo;.</p>
+<p><strong>Digital Learning Hub Sek II &ndash; Online Community:</strong> Im Teams &bdquo;DLH Community&ldquo; enthalten verschiedene Kanäle Beiträge zur Bildungsinnovation.</p>
+<p><strong>Communities of Practice des DLH:</strong> Der Austausch in Teams zu gewissen Themenfeldern oder digitalen Tools mit anderen Lehrpersonen lohnt sich (<a href="https://www.dlh.zh.ch/home/cops" target="_blank">dlh.zh.ch/home/cops</a>).</p></div>
+    </div>
+    <div class="col col-new">
+      <div class="lab lab-new">Neu (Vorschau)</div>
+      <div class="mini-title">Wo kann ich mich für Projektideen inspirieren lassen?</div>
+      <div class="prev"><p>Gute Projektideen entstehen oft direkt im Unterrichtsalltag: aus neuen Herausforderungen, eigenen Beobachtungen oder dem Wunsch, etwas anders auszuprobieren. Hier findet ein Austausch statt:</p>
+<ul>
+  <li><strong>DLH-Community auf Teams</strong><br>Im Teams &bdquo;DLH-Community&ldquo; enthalten verschiedene Kanäle Beiträge zur Bildungsinnovation.</li>
+  <li><strong>Communities of Practice (CoPs) des DLH</strong><br>Der Austausch mit anderen Lehrpersonen in Teams zu gewissen Themenfeldern oder digitalen Tools (<a href="https://www.dlh.zh.ch/home/cops" target="_blank" rel="noopener">dlh.zh.ch/home/cops</a>).</li>
+  <li><strong>Projektsammlung</strong><br>Bereits umgesetzte Projekte bieten Einblicke, Ideen und Inspiration für eigene Unterrichtsvorhaben (<a href="https://www.dlh.zh.ch/home/innovationsfonds/projektvorstellungen/uebersicht" target="_blank" rel="noopener">Alle Projekte im Überblick</a>).</li>
+</ul>
+<p>Häufig werden neue Entwicklungen erst mit etwas Verzögerung im Bildungsbereich sichtbar. Deshalb lohnt es sich &ndash; insbesondere bei &bdquo;Digital Explorer&ldquo;-Projekten &ndash; auch einen Blick auf aktuelle Trends und Entwicklungen ausserhalb der Schule zu werfen:</p>
+<ul>
+  <li><strong>Innovative Betriebe und Forschungseinrichtungen</strong><br>Lehrbetriebe, Hochschulen und Forschungseinrichtungen greifen neue Technologien und digitale Entwicklungen häufig früh auf und integrieren diese in ihren Arbeitsalltag.</li>
+  <li>aktuelle <strong>Entwicklungen rund um KI, digitale Medien</strong> und vielen anderen Technologien.</li>
+</ul>
+<p>Nicht jede Projektidee muss von Anfang an vollständig ausgearbeitet sein. Oft entstehen Innovationen erst durch das Ausprobieren im Unterricht oder das gemeinsame Gespräch.</p></div>
+    </div>
+    <div class="col col-code">
+      <div class="lab lab-code">JCE-HTML-Code (kopieren)</div>
+      <div class="mini-title">&nbsp;</div>
+      <textarea class="code" readonly rows="14" onclick="this.select()">&lt;p&gt;Gute Projektideen entstehen oft direkt im Unterrichtsalltag: aus neuen Herausforderungen, eigenen Beobachtungen oder dem Wunsch, etwas anders auszuprobieren. Hier findet ein Austausch statt:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;DLH-Community auf Teams&lt;/strong&gt;&lt;br&gt;Im Teams &amp;bdquo;DLH-Community&amp;ldquo; enthalten verschiedene Kanäle Beiträge zur Bildungsinnovation.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Communities of Practice (CoPs) des DLH&lt;/strong&gt;&lt;br&gt;Der Austausch mit anderen Lehrpersonen in Teams zu gewissen Themenfeldern oder digitalen Tools (&lt;a href=&quot;https://www.dlh.zh.ch/home/cops&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;dlh.zh.ch/home/cops&lt;/a&gt;).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Projektsammlung&lt;/strong&gt;&lt;br&gt;Bereits umgesetzte Projekte bieten Einblicke, Ideen und Inspiration für eigene Unterrichtsvorhaben (&lt;a href=&quot;https://www.dlh.zh.ch/home/innovationsfonds/projektvorstellungen/uebersicht&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Alle Projekte im Überblick&lt;/a&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Häufig werden neue Entwicklungen erst mit etwas Verzögerung im Bildungsbereich sichtbar. Deshalb lohnt es sich &amp;ndash; insbesondere bei &amp;bdquo;Digital Explorer&amp;ldquo;-Projekten &amp;ndash; auch einen Blick auf aktuelle Trends und Entwicklungen ausserhalb der Schule zu werfen:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Innovative Betriebe und Forschungseinrichtungen&lt;/strong&gt;&lt;br&gt;Lehrbetriebe, Hochschulen und Forschungseinrichtungen greifen neue Technologien und digitale Entwicklungen häufig früh auf und integrieren diese in ihren Arbeitsalltag.&lt;/li&gt;
+  &lt;li&gt;aktuelle &lt;strong&gt;Entwicklungen rund um KI, digitale Medien&lt;/strong&gt; und vielen anderen Technologien.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Nicht jede Projektidee muss von Anfang an vollständig ausgearbeitet sein. Oft entstehen Innovationen erst durch das Ausprobieren im Unterricht oder das gemeinsame Gespräch.&lt;/p&gt;</textarea>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="card-top"><span class="pill">Akkordeon · Ablauf</span><span class="num">Block 10</span></div>
+  <div class="cols">
+    <div class="col col-old">
+      <div class="lab lab-old">Alt (bisher)</div>
+      <div class="mini-title">Erarbeitung des Projektantrags</div>
+      <div class="prev"><p>Ihre Projektidee besprechen Sie mit Ihrer/n Schulleitung(en), um die dafür nötigen Entlastungen gut planen zu können und die Unterstützungszusagen einzuholen.</p>
+<p>Der Projektantrag soll dem DLH-Innovationsfonds-Team und der Jury eine Vorstellung geben, welches Ziel Sie mit dem Projekt verfolgen wollen, wer an der Umsetzung beteiligt ist und wie viele zusätzliche Ressourcen benötigt werden, damit die Realisierbarkeit abgeschätzt werden kann.</p>
+<p>Gerne unterstützen wir Sie in der konkreten Ausarbeitung Ihres Projektantrags mit unseren Beratungscalls (<a href="#">Termine</a>).</p></div>
+    </div>
+    <div class="col col-new">
+      <div class="lab lab-new">Neu (Vorschau)</div>
+      <div class="mini-title">Wie entsteht aus der Idee ein Projektantrag?</div>
+      <div class="prev"><ol>
+  <li>Finden Sie passende Teampartner mit den notwendigen Kompetenzen.</li>
+  <li>Skizzieren Sie zusammen Ihre Projektidee.</li>
+  <li>Besprechen Sie diese frühzeitig mit Ihrer Schulleitung, damit mögliche Entlastungen und Unterstützungen gemeinsam geplant werden können.</li>
+  <li>Schreiben Sie den Projektantrag und optimieren Sie diesen gemeinsam im Team so, dass die Jury daraus lesen kann, was Sie ausprobieren wollen, was Sie damit erreichen wollen, wie Sie das ganz konkret angehen, welche Ressourcen Sie dazu brauchen und was dabei schiefgehen könnte. Sie müssen weder das Projekt noch sich selbst gut verkaufen, sondern selbstkritisch-konstruktiv zeigen, dass Sie wissen, was Sie tun.</li>
+</ol>
+<p>Gerne unterstützen wir Sie bei der Ausarbeitung Ihres Projektantrags im Rahmen unserer Beratungscalls (<a href="https://www.dlh.zh.ch/home/innovationsfonds/termine" target="_blank" rel="noopener">Termine</a>) oder auf Anfrage per <a href="#kontakt">Mail</a>.</p></div>
+    </div>
+    <div class="col col-code">
+      <div class="lab lab-code">JCE-HTML-Code (kopieren)</div>
+      <div class="mini-title">&nbsp;</div>
+      <textarea class="code" readonly rows="9" onclick="this.select()">&lt;ol&gt;
+  &lt;li&gt;Finden Sie passende Teampartner mit den notwendigen Kompetenzen.&lt;/li&gt;
+  &lt;li&gt;Skizzieren Sie zusammen Ihre Projektidee.&lt;/li&gt;
+  &lt;li&gt;Besprechen Sie diese frühzeitig mit Ihrer Schulleitung, damit mögliche Entlastungen und Unterstützungen gemeinsam geplant werden können.&lt;/li&gt;
+  &lt;li&gt;Schreiben Sie den Projektantrag und optimieren Sie diesen gemeinsam im Team so, dass die Jury daraus lesen kann, was Sie ausprobieren wollen, was Sie damit erreichen wollen, wie Sie das ganz konkret angehen, welche Ressourcen Sie dazu brauchen und was dabei schiefgehen könnte. Sie müssen weder das Projekt noch sich selbst gut verkaufen, sondern selbstkritisch-konstruktiv zeigen, dass Sie wissen, was Sie tun.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Gerne unterstützen wir Sie bei der Ausarbeitung Ihres Projektantrags im Rahmen unserer Beratungscalls (&lt;a href=&quot;https://www.dlh.zh.ch/home/innovationsfonds/termine&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Termine&lt;/a&gt;) oder auf Anfrage per &lt;a href=&quot;#kontakt&quot;&gt;Mail&lt;/a&gt;.&lt;/p&gt;</textarea>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="card-top"><span class="pill">Akkordeon · Ablauf</span><span class="num">Block 11</span></div>
+  <div class="cols">
+    <div class="col col-old">
+      <div class="lab lab-old">Alt (bisher)</div>
+      <div class="mini-title">Wie geht es weiter nach der Einreichung des Projektantrags? &nbsp;+&nbsp; Jury-Entscheid zur Förderung von Projekten (bisher 2 Akkordeons)</div>
+      <div class="prev"><p><strong>Wie geht es weiter nach der Einreichung des Projektantrags?</strong></p>
+<p>Die Projektgruppe und die Schulleitung(en) erhalten eine automatische Einreichbestätigung zum eingereichten Antrag. Danach prüft die Geschäftsstelle Innovationsfonds die Einhaltung der formalen Kriterien. Sind die formalen Kriterien erfüllt, leitet sie den Antrag an die Jury weiter. Ansonsten informiert sie die Projektgruppe über nötige Anpassungen.</p>
+<p><strong>Jury-Entscheid zur Förderung von Projekten</strong></p>
+<p>Die <a href="#">Jury</a>, welche den Entscheid zur Förderung von Projekten fällt, ist breit abgestützt. Sie bewertet die Projekte nach den festgelegten Kriterien (siehe Rahmenbedingungen: Was wird gefördert?). Der DLH informiert die Antragsstellenden über den Jury-Entscheid. Weitere Auskünfte über den Jury-Entscheid werden nicht erteilt. Der Rechtsweg ist ausgeschlossen.</p></div>
+    </div>
+    <div class="col col-new">
+      <div class="lab lab-new">Neu (Vorschau)</div>
+      <div class="mini-title">Was passiert mit dem eingereichten Projektantrag?</div>
+      <div class="prev"><p>Mit der Einreichung erhalten die Projektgruppe und die Schulleitung(en) automatisch eine Eingangsbestätigung.</p>
+<p>Anschliessend prüft die Geschäftsstelle des Innovationsfonds, ob die formalen Kriterien erfüllt sind. Falls nicht, nimmt die Geschäftsstelle mit der Projektgruppe Kontakt auf.</p>
+<p>Sind die formalen Kriterien erfüllt, wird der Projektantrag an die Jury weitergeleitet.</p>
+<p>Die <a href="https://www.dlh.zh.ch/home/innovationsfonds/jury" target="_blank" rel="noopener">Jury</a>, welche den Entscheid zur Förderung von Projekten fällt, ist breit abgestützt. Sie bewertet die Projekte nach den festgelegten Kriterien (siehe Rahmenbedingungen: &bdquo;Welche Kriterien gelten für die Förderung?&ldquo;).</p></div>
+    </div>
+    <div class="col col-code">
+      <div class="lab lab-code">JCE-HTML-Code (kopieren)</div>
+      <div class="mini-title">&nbsp;</div>
+      <textarea class="code" readonly rows="6" onclick="this.select()">&lt;p&gt;Mit der Einreichung erhalten die Projektgruppe und die Schulleitung(en) automatisch eine Eingangsbestätigung.&lt;/p&gt;
+&lt;p&gt;Anschliessend prüft die Geschäftsstelle des Innovationsfonds, ob die formalen Kriterien erfüllt sind. Falls nicht, nimmt die Geschäftsstelle mit der Projektgruppe Kontakt auf.&lt;/p&gt;
+&lt;p&gt;Sind die formalen Kriterien erfüllt, wird der Projektantrag an die Jury weitergeleitet.&lt;/p&gt;
+&lt;p&gt;Die &lt;a href=&quot;https://www.dlh.zh.ch/home/innovationsfonds/jury&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Jury&lt;/a&gt;, welche den Entscheid zur Förderung von Projekten fällt, ist breit abgestützt. Sie bewertet die Projekte nach den festgelegten Kriterien (siehe Rahmenbedingungen: &amp;bdquo;Welche Kriterien gelten für die Förderung?&amp;ldquo;).&lt;/p&gt;</textarea>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="card-top"><span class="pill">Akkordeon · Ablauf</span><span class="num">Block 12</span></div>
+  <div class="cols">
+    <div class="col col-old">
+      <div class="lab lab-old">Alt (bisher)</div>
+      <div class="mini-title">Beratung und Begleitung von geförderten Projekten bis zu deren Abschluss</div>
+      <div class="prev"><p>Nach dem Förderentscheid startet das Projekt und kann über ein bis drei Jahre umgesetzt werden. Über diese Zeit werden die Antragsstellenden vom DLH weiter begleitet. Die Projektbegleitung fordert sporadisch einen kurzen Statusbericht ein, welcher den Fortschritt des Projekts dokumentiert und den Finanzmitteleinsatz transparent macht.</p></div>
+    </div>
+    <div class="col col-new">
+      <div class="lab lab-new">Neu (Vorschau)</div>
+      <div class="mini-title">Was geschieht nach dem Juryentscheid?</div>
+      <div class="prev"><p>Der DLH informiert die Projektgruppe anschliessend über den Entscheid zur Förderung. (Weitere Auskünfte über den Jury-Entscheid werden nicht erteilt. Der Rechtsweg ist ausgeschlossen.)</p>
+<p>Bei einem <strong>positiven Entscheid</strong> dürfen die Projektteams sofort mit der Umsetzung ihres Projekts beginnen. Diese kann in der Regel über ein bis drei Jahre dauern. Während dieser Zeit werden die Projektgruppen vom DLH begleitet und unterstützt. Dazu gehören Austausch, Beratung sowie punktuelle Rückmeldungen zum Projektverlauf, um den Fortschritt des Projekts festzuhalten und den Einsatz der Fördermittel nachvollziehbar zu dokumentieren.</p>
+<p>Bei einem <strong>negativen Entscheid</strong> kann das Projektteam seinen Projektantrag auf das Juryfeedback hin überarbeiten und nach frühestens sechs Wochen wiedereinreichen.</p></div>
+    </div>
+    <div class="col col-code">
+      <div class="lab lab-code">JCE-HTML-Code (kopieren)</div>
+      <div class="mini-title">&nbsp;</div>
+      <textarea class="code" readonly rows="5" onclick="this.select()">&lt;p&gt;Der DLH informiert die Projektgruppe anschliessend über den Entscheid zur Förderung. (Weitere Auskünfte über den Jury-Entscheid werden nicht erteilt. Der Rechtsweg ist ausgeschlossen.)&lt;/p&gt;
+&lt;p&gt;Bei einem &lt;strong&gt;positiven Entscheid&lt;/strong&gt; dürfen die Projektteams sofort mit der Umsetzung ihres Projekts beginnen. Diese kann in der Regel über ein bis drei Jahre dauern. Während dieser Zeit werden die Projektgruppen vom DLH begleitet und unterstützt. Dazu gehören Austausch, Beratung sowie punktuelle Rückmeldungen zum Projektverlauf, um den Fortschritt des Projekts festzuhalten und den Einsatz der Fördermittel nachvollziehbar zu dokumentieren.&lt;/p&gt;
+&lt;p&gt;Bei einem &lt;strong&gt;negativen Entscheid&lt;/strong&gt; kann das Projektteam seinen Projektantrag auf das Juryfeedback hin überarbeiten und nach frühestens sechs Wochen wiedereinreichen.&lt;/p&gt;</textarea>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="card-top"><span class="pill">Akkordeon · Ablauf</span><span class="num">Block 13</span></div>
+  <div class="cols">
+    <div class="col col-old">
+      <div class="lab lab-old">Alt (bisher)</div>
+      <div class="mini-title">Publikation von Innovationsvorhaben und abgeschlossenen Projekten</div>
+      <div class="prev"><p>Innovationsvorhaben und -projekte werden sichtbar und verfügbar gemacht, damit weitere Lehrpersonen Inspiration zur Unterrichtsentwicklung erhalten, Erfahrungen im DLH-Netzwerk austauschen und Unterrichtsprojekte nutzen können. Die Projektbeschreibungen werden von DLH-Mitarbeitenden aufbereitet und in Absprache mit den Lehrpersonen öffentlich publiziert.</p>
+<p>Nach Abschluss des Projektes (in der Regel spätestens 3 Jahre nach dem Start) veröffentlichen DLH-Mitarbeitende die Projektdokumentation und -produkte, wieder nach Absprache mit den Lehrpersonen.</p></div>
+    </div>
+    <div class="col col-new">
+      <div class="lab lab-new">Neu (Vorschau)</div>
+      <div class="mini-title">Wie werden Erfahrungen und Ergebnisse geteilt?</div>
+      <div class="prev"><p>Der DLH macht in Absprache mit dem jeweiligen Projektteam die Projektresultate und Erfahrungen aus dem Projekt zugänglich. Auch allfällige Produkte werden auf der <a href="https://dlh.zh.ch/home/innovationsfonds/projektvorstellungen/uebersicht" target="_blank" rel="noopener">DLH-Webseite</a> allen Lehrpersonen zur Verfügung gestellt.</p></div>
+    </div>
+    <div class="col col-code">
+      <div class="lab lab-code">JCE-HTML-Code (kopieren)</div>
+      <div class="mini-title">&nbsp;</div>
+      <textarea class="code" readonly rows="4" onclick="this.select()">&lt;p&gt;Der DLH macht in Absprache mit dem jeweiligen Projektteam die Projektresultate und Erfahrungen aus dem Projekt zugänglich. Auch allfällige Produkte werden auf der &lt;a href=&quot;https://dlh.zh.ch/home/innovationsfonds/projektvorstellungen/uebersicht&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;DLH-Webseite&lt;/a&gt; allen Lehrpersonen zur Verfügung gestellt.&lt;/p&gt;</textarea>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="card-top"><span class="pill">Akkordeon · Ablauf</span><span class="num">Block 14</span></div>
+  <div class="cols">
+    <div class="col col-old">
+      <div class="lab lab-old">Alt (bisher)</div>
+      <div class="mini-title">Der Schritt danach: Weiterentwicklung durch den DLH für eine breite und langfristige Nutzung</div>
+      <div class="prev"><p>Nach Abschluss der Innovationsfondsprojekte werden Projekte bzw. Produkte mit Potential auf- bzw. weiterbearbeitet, damit sie von möglichst vielen Lehrpersonen und möglichst langfristig genutzt werden können. Dies ist ein Folgeprozess, der vom DLH geleitet wird.</p>
+<p>Zu dieser Phase gehören z.&nbsp;B. inhaltliche Anpassungen und Weiterentwicklungen von Projekten/Produkten, aber auch Vernetzungsaktivitäten (z.&nbsp;B. Präsentation von Projekten in einem Impuls-Workshop sowie Diskussion von &bdquo;Learnings&ldquo; in der DLH-Community).</p></div>
+    </div>
+    <div class="col col-new">
+      <div class="lab lab-new">Neu (Vorschau)</div>
+      <div class="mini-title">Was geschieht nach dem Projektabschluss?</div>
+      <div class="prev"><p>Unabhängig von der Projektart können ausgewählte Projektresultate durch den DLH gemeinsam mit Lehrpersonen weiterentwickelt, aufbereitet und für eine breitere Nutzung zugänglich gemacht werden.</p>
+<p>Dazu gehören beispielsweise Projektvorstellungen, <a href="https://dlh.zh.ch/home/impuls-workshops" target="_blank" rel="noopener">Workshops</a>, Weiterentwicklungen von Unterrichtsmaterialien oder der Austausch von Erfahrungen und Learnings innerhalb der DLH-Community.</p></div>
+    </div>
+    <div class="col col-code">
+      <div class="lab lab-code">JCE-HTML-Code (kopieren)</div>
+      <div class="mini-title">&nbsp;</div>
+      <textarea class="code" readonly rows="4" onclick="this.select()">&lt;p&gt;Unabhängig von der Projektart können ausgewählte Projektresultate durch den DLH gemeinsam mit Lehrpersonen weiterentwickelt, aufbereitet und für eine breitere Nutzung zugänglich gemacht werden.&lt;/p&gt;
+&lt;p&gt;Dazu gehören beispielsweise Projektvorstellungen, &lt;a href=&quot;https://dlh.zh.ch/home/impuls-workshops&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Workshops&lt;/a&gt;, Weiterentwicklungen von Unterrichtsmaterialien oder der Austausch von Erfahrungen und Learnings innerhalb der DLH-Community.&lt;/p&gt;</textarea>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="card-top"><span class="pill">Fliesstext-Block</span><span class="num">Block 15</span></div>
+  <div class="cols">
+    <div class="col col-old">
+      <div class="lab lab-old">Alt (bisher)</div>
+      <div class="mini-title">Projekteingabe</div>
+      <div class="prev"><p>Gerne können Sie Ihre Projektidee in einem unserer Calls (<a href="#">Termine</a>) vorbesprechen. Für den Projektantrag füllen Sie folgendes Dokument aus:</p>
+<p><a href="#">Projekteingabe-Formular</a></p>
+<p>Laden Sie den Projektantrag hier hoch: <a href="#">Zur Projekteingabe</a></p></div>
+    </div>
+    <div class="col col-new">
+      <div class="lab lab-new">Neu (Vorschau)</div>
+      <div class="mini-title">Projekt einreichen</div>
+      <div class="prev"><h3>Projekt einreichen</h3>
+<p>Gerne können Sie Ihre Projektidee vorab in einem unserer Beratungscalls besprechen (<a href="https://www.dlh.zh.ch/home/innovationsfonds/termine" target="_blank" rel="noopener">Termine</a>).</p>
+<p>Für die Einreichung verwenden Sie bitte folgendes Formular: <a href="https://www.dlh.zh.ch/images/Innovationsfond/Projekteingabefomular%20Version%206.2.docx" target="_blank" rel="noopener">Projekteingabe-Formular</a></p>
+<p>Den ausgefüllten Projektantrag können Sie hier hochladen: <a href="https://www.dlh.zh.ch/home/innovationsfonds/formular" target="_blank" rel="noopener">Zur Projekteingabe</a></p></div>
+    </div>
+    <div class="col col-code">
+      <div class="lab lab-code">JCE-HTML-Code (kopieren)</div>
+      <div class="mini-title">&nbsp;</div>
+      <textarea class="code" readonly rows="6" onclick="this.select()">&lt;h3&gt;Projekt einreichen&lt;/h3&gt;
+&lt;p&gt;Gerne können Sie Ihre Projektidee vorab in einem unserer Beratungscalls besprechen (&lt;a href=&quot;https://www.dlh.zh.ch/home/innovationsfonds/termine&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Termine&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Für die Einreichung verwenden Sie bitte folgendes Formular: &lt;a href=&quot;https://www.dlh.zh.ch/images/Innovationsfond/Projekteingabefomular%20Version%206.2.docx&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Projekteingabe-Formular&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Den ausgefüllten Projektantrag können Sie hier hochladen: &lt;a href=&quot;https://www.dlh.zh.ch/home/innovationsfonds/formular&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Zur Projekteingabe&lt;/a&gt;&lt;/p&gt;</textarea>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="card-top"><span class="pill">Fliesstext-Block</span><span class="num">Block 16</span></div>
+  <div class="cols">
+    <div class="col col-old">
+      <div class="lab lab-old">Alt (bisher)</div>
+      <div class="mini-title">An wen kann ich mich bei Fragen wenden?</div>
+      <div class="prev"><p>Bei Fragen können Sie sich an die Geschäftsstellen wenden, bei der Suche nach Kooperationspartnern auch an die DLH-Community (via Teams). Organisatorisch werden zwei separate Innovationsfonds geführt, um den Besonderheiten der Mittelschulen und der Schulen der Berufsbildung Rechnung zu tragen. Der Prozess der Vergabe der Mittel, die Kriterien sowie die Zusammensetzung der beurteilenden Gremien sind in beiden Innovationsfonds vergleichbar.</p>
+<p><strong>Geschäftsstelle Berufsbildung</strong><br>Vor dem Projektstart / Einreichung: Christian Roduner <a href="mailto:ifbb@dlh.zh.ch">ifbb@dlh.zh.ch</a><br>Während der Projektausarbeitung: Jürg Widrig <a href="mailto:juerg.widrig@dlh.zh.ch">juerg.widrig@dlh.zh.ch</a></p>
+<p><strong>Geschäftsstelle Mittelschulen</strong><br>Vor dem Projektstart / Einreichung: Natalie Streiff <a href="mailto:ifms@dlh.zh.ch">ifms@dlh.zh.ch</a><br>Während der Projektausarbeitung: Jürg Widrig <a href="mailto:juerg.widrig@dlh.zh.ch">juerg.widrig@dlh.zh.ch</a></p></div>
+    </div>
+    <div class="col col-new">
+      <div class="lab lab-new">Neu (Vorschau)</div>
+      <div class="mini-title">Fragen oder Unterstützung?</div>
+      <div class="prev"><h3 id="kontakt">Fragen oder Unterstützung?</h3>
+<p>Bei Fragen zur Projekteingabe oder bei der Suche nach Kooperationspartner:innen unterstützen Sie die Geschäftsstellen sowie die DLH-Community auf Teams gerne.</p>
+<p>Organisatorisch werden zwei separate Innovationsfonds geführt, um den Besonderheiten der Mittelschulen und der Schulen der Berufsbildung Rechnung zu tragen. Die Förderkriterien und der Vergabeprozess sind jedoch vergleichbar.</p>
+<h4>Geschäftsstelle Berufsbildung</h4>
+<p>Vor dem Projektstart / Einreichung: Christian Roduner <a href="mailto:ifbb@dlh.zh.ch">ifbb@dlh.zh.ch</a><br>Während der Projektausarbeitung: Jürg Widrig <a href="mailto:juerg.widrig@dlh.zh.ch">juerg.widrig@dlh.zh.ch</a></p>
+<h4>Geschäftsstelle Mittelschulen</h4>
+<p>Vor dem Projektstart / Einreichung: Natalie Streiff <a href="mailto:ifms@dlh.zh.ch">ifms@dlh.zh.ch</a><br>Während der Projektausarbeitung: Jürg Widrig <a href="mailto:juerg.widrig@dlh.zh.ch">juerg.widrig@dlh.zh.ch</a></p></div>
+    </div>
+    <div class="col col-code">
+      <div class="lab lab-code">JCE-HTML-Code (kopieren)</div>
+      <div class="mini-title">&nbsp;</div>
+      <textarea class="code" readonly rows="9" onclick="this.select()">&lt;h3 id=&quot;kontakt&quot;&gt;Fragen oder Unterstützung?&lt;/h3&gt;
+&lt;p&gt;Bei Fragen zur Projekteingabe oder bei der Suche nach Kooperationspartner:innen unterstützen Sie die Geschäftsstellen sowie die DLH-Community auf Teams gerne.&lt;/p&gt;
+&lt;p&gt;Organisatorisch werden zwei separate Innovationsfonds geführt, um den Besonderheiten der Mittelschulen und der Schulen der Berufsbildung Rechnung zu tragen. Die Förderkriterien und der Vergabeprozess sind jedoch vergleichbar.&lt;/p&gt;
+&lt;h4&gt;Geschäftsstelle Berufsbildung&lt;/h4&gt;
+&lt;p&gt;Vor dem Projektstart / Einreichung: Christian Roduner &lt;a href=&quot;mailto:ifbb@dlh.zh.ch&quot;&gt;ifbb@dlh.zh.ch&lt;/a&gt;&lt;br&gt;Während der Projektausarbeitung: Jürg Widrig &lt;a href=&quot;mailto:juerg.widrig@dlh.zh.ch&quot;&gt;juerg.widrig@dlh.zh.ch&lt;/a&gt;&lt;/p&gt;
+&lt;h4&gt;Geschäftsstelle Mittelschulen&lt;/h4&gt;
+&lt;p&gt;Vor dem Projektstart / Einreichung: Natalie Streiff &lt;a href=&quot;mailto:ifms@dlh.zh.ch&quot;&gt;ifms@dlh.zh.ch&lt;/a&gt;&lt;br&gt;Während der Projektausarbeitung: Jürg Widrig &lt;a href=&quot;mailto:juerg.widrig@dlh.zh.ch&quot;&gt;juerg.widrig@dlh.zh.ch&lt;/a&gt;&lt;/p&gt;</textarea>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="card-top"><span class="pill">Fliesstext-Block</span><span class="num">Block 17</span></div>
+  <div class="cols">
+    <div class="col col-old">
+      <div class="lab lab-old">Alt (bisher)</div>
+      <div class="mini-title">Beispiele der letzten Förderrunde</div>
+      <div class="prev"><p>Bereich mit Projektkacheln (&bdquo;Beispiele der letzten Förderrunde&ldquo;) &ndash; automatisch aus den Projektvorstellungen gezogen.</p></div>
+    </div>
+    <div class="col col-new">
+      <div class="lab lab-new">Neu (Vorschau)</div>
+      <div class="mini-title">Projektsammlung</div>
+      <div class="prev"><h3>Projektsammlung</h3>
+<p>Bereich «Projektsammlung» mit Beispielen geförderter Projekte (<a href="https://www.dlh.zh.ch/home/innovationsfonds/projektvorstellungen/uebersicht" target="_blank" rel="noopener">Alle Projekte im Überblick</a>).</p></div>
+    </div>
+    <div class="col col-code">
+      <div class="lab lab-code">JCE-HTML-Code (kopieren)</div>
+      <div class="mini-title">&nbsp;</div>
+      <textarea class="code" readonly rows="4" onclick="this.select()">&lt;h3&gt;Projektsammlung&lt;/h3&gt;
+&lt;p&gt;Bereich «Projektsammlung» mit Beispielen geförderter Projekte (&lt;a href=&quot;https://www.dlh.zh.ch/home/innovationsfonds/projektvorstellungen/uebersicht&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Alle Projekte im Überblick&lt;/a&gt;).&lt;/p&gt;</textarea>
+    </div>
+  </div>
+</section>
+</div>
+</body>
+</html>
