@@ -3,3 +3,4 @@ Die Worddatei [IF-Website-4.0](https://eduzh-my.sharepoint.com/:w:/g/personal/an
 
 Die Webdarstellung ist in der index.html Datei angelegt  
 Damit kann die Webdarstellung unter [https://aapdinternet.github.io/if-fonds/](https://aapdinternet.github.io/if-fonds/) erreicht werden.
+Hier noch Alt-Neu-JCE_Code nebeneinander [https://aapdinternet.github.io/if-fonds/index-JCE-Vergleich.html](https://aapdinternet.github.io/if-fonds/index-JCE-Vergleich.html)
