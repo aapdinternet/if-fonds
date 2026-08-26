@@ -6,3 +6,4 @@ Damit kann die Webdarstellung unter [https://aapdinternet.github.io/if-fonds/](h
 Hier noch Alt-Neu-JCE_Code nebeneinander [https://aapdinternet.github.io/if-fonds/index-JCE-Vergleich.html](https://aapdinternet.github.io/if-fonds/index-JCE-Vergleich.html)
 
 Projekttypen-Foerderkriterien.html [https://aapdinternet.github.io/if-fonds/Projekttypen-Foerderkriterien.html](https://aapdinternet.github.io/Projekttypen-Foerderkriterien.html)
+adsfa
