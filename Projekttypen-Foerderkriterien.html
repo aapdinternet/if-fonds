@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Förderkriterien und Projekttypen – Innovationsfonds DLH</title>
+
+<!-- ===================================================================
+     EINBETTEN IN JOOMLA / YOOTHEME
+     Nur diese drei Teile kopieren:
+       1. den Style-Block «if-krit Styles» (NICHT den Block darueber)
+       2. das Markup <div id="if-krit"> … </div>
+       3. den Script-Block am Dateiende
+     Alle CSS-Regeln sind auf #if-krit gescoped, alle Klassen mit "if-"
+     geprefixt, alle IDs bis auf #if-krit entfernt. Dadurch keine
+     Kollision mit Template-CSS/JS (UIkit, Bootstrap, Suchmodul).
+     =================================================================== -->
+
+<style>
+  /* Nur fuer diese eigenstaendige Datei – beim Einbetten NICHT mitkopieren */
+  body{margin:0;background:#f4f7f9}
+</style>
+
+<style>
+  /* ================= if-krit Styles ================= */
+  #if-krit{
+    --if-ink:#16232b;
+    --if-ink-soft:#4a5b66;
+    --if-line:#dde5ea;
+    --if-bg:#f4f7f9;
+    --if-card:#ffffff;
+    --if-blue:#1d5673;
+    --if-blue-soft:#e7f0f5;
+    --if-green:#2f6d2a;
+    --if-green-soft:#e9f2e6;
+    --if-d:#b8560f;
+    --if-l:#7a3f9d;
+    --if-h:#0f6b6b;
+    --if-d-soft:#fdf0e6;
+    --if-l-soft:#f4ecfa;
+    --if-h-soft:#e6f4f4;
+    --if-radius:14px;
+    --if-shadow:0 1px 2px rgba(22,35,43,.06), 0 6px 20px rgba(22,35,43,.06);
+
+    box-sizing:border-box;width:100%;margin:0;padding:32px 28px 80px;
+    background:var(--if-bg);color:var(--if-ink);text-align:left;
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  #if-krit *,#if-krit *::before,#if-krit *::after{box-sizing:border-box}
+  #if-krit .if-hide{display:none !important}
+
+  /* ---------- Header ---------- */
+  #if-krit header{margin:0 0 26px;padding:0;background:none;border:0}
+  #if-krit h1{
+    font-family:inherit;color:var(--if-ink);
+    font-size:clamp(1.7rem,4.2vw,2.5rem);
+    line-height:1.15;letter-spacing:-.02em;margin:0 0 8px;
+  }
+  #if-krit .if-sub{color:var(--if-ink-soft);margin:0 0 18px}
+  #if-krit .if-note{
+    background:var(--if-blue-soft);border-left:4px solid var(--if-blue);
+    border-radius:0 10px 10px 0;padding:12px 16px;margin:0 0 24px;
+    font-size:.94rem;color:#123f56;
+  }
+
+  /* ---------- Projekttyp-Karten / Filter ---------- */
+  #if-krit .if-types{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:12px;margin-bottom:10px;
+  }
+  #if-krit .if-type{
+    all:unset;box-sizing:border-box;font-family:inherit;text-align:left;
+    cursor:pointer;display:block;
+    background:var(--if-card);border:1.5px solid var(--if-line);border-radius:var(--if-radius);
+    padding:14px 16px;box-shadow:var(--if-shadow);transition:.15s;
+  }
+  #if-krit .if-type:hover{transform:translateY(-2px)}
+  #if-krit .if-type:focus-visible{outline:3px solid var(--if-blue);outline-offset:2px}
+  #if-krit .if-type .if-letter{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:26px;height:26px;border-radius:8px;font-weight:800;font-size:.95rem;
+    margin-right:8px;vertical-align:-6px;
+  }
+  #if-krit .if-type .if-tname{font-weight:700;font-size:1.02rem}
+  #if-krit .if-type .if-thours{display:block;margin-top:8px;font-size:.86rem;color:var(--if-ink-soft)}
+  #if-krit .if-type[data-t="D"] .if-letter{background:var(--if-d-soft);color:var(--if-d)}
+  #if-krit .if-type[data-t="L"] .if-letter{background:var(--if-l-soft);color:var(--if-l)}
+  #if-krit .if-type[data-t="H"] .if-letter{background:var(--if-h-soft);color:var(--if-h)}
+  #if-krit .if-type[aria-pressed="true"]{border-color:currentColor}
+  #if-krit .if-type[data-t="D"][aria-pressed="true"]{border-color:var(--if-d);background:var(--if-d-soft)}
+  #if-krit .if-type[data-t="L"][aria-pressed="true"]{border-color:var(--if-l);background:var(--if-l-soft)}
+  #if-krit .if-type[data-t="H"][aria-pressed="true"]{border-color:var(--if-h);background:var(--if-h-soft)}
+
+  /* ---------- Toolbar ---------- */
+  #if-krit .if-toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:18px 0 14px}
+  #if-krit .if-search{flex:1 1 240px;position:relative}
+  #if-krit .if-search input{
+    width:100%;margin:0;height:auto;line-height:normal;
+    padding:10px 14px 10px 36px;font-size:.95rem;font-family:inherit;
+    border:1.5px solid var(--if-line);border-radius:10px;
+    background:var(--if-card);color:var(--if-ink);
+    box-shadow:none;-webkit-appearance:none;appearance:none;
+  }
+  #if-krit .if-search input:focus{outline:none;border-color:var(--if-blue);box-shadow:none}
+  #if-krit .if-search svg{position:absolute;left:11px;top:11px;opacity:.45}
+  #if-krit .if-btn{
+    all:unset;box-sizing:border-box;font-family:inherit;text-align:center;
+    cursor:pointer;padding:9px 14px;font-size:.9rem;font-weight:600;
+    border:1.5px solid var(--if-line);border-radius:10px;
+    background:var(--if-card);color:var(--if-ink-soft);
+  }
+  #if-krit .if-btn:hover{border-color:var(--if-blue);color:var(--if-blue)}
+  #if-krit .if-btn:focus-visible{outline:3px solid var(--if-blue);outline-offset:2px}
+  #if-krit .if-filterinfo{font-size:.88rem;color:var(--if-ink-soft);margin:0 0 14px;min-height:1.3em}
+  #if-krit .if-filterinfo b{color:var(--if-ink)}
+
+  /* ---------- Kriterien-Liste ---------- */
+  #if-krit .if-group-label{
+    font-size:.76rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--if-ink-soft);margin:22px 0 8px;
+  }
+  #if-krit details.if-crit{
+    background:var(--if-card);border:1px solid var(--if-line);border-radius:var(--if-radius);
+    margin-bottom:8px;box-shadow:var(--if-shadow);overflow:hidden;
+  }
+  #if-krit details.if-crit[open]{border-color:#c3d4dd}
+  #if-krit summary{
+    cursor:pointer;list-style:none;display:flex;align-items:center;gap:12px;
+    padding:15px 18px;margin:0;font-weight:650;background:none;border:0;
+  }
+  #if-krit summary::-webkit-details-marker{display:none}
+  #if-krit summary::marker{content:""}
+  #if-krit summary:focus-visible{outline:3px solid var(--if-blue);outline-offset:-3px}
+  #if-krit .if-num{
+    flex:0 0 auto;width:28px;height:28px;border-radius:9px;
+    background:var(--if-blue-soft);color:var(--if-blue);
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;
+  }
+  #if-krit .if-ctitle{flex:1 1 auto}
+  #if-krit .if-tag{
+    flex:0 0 auto;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 8px;border-radius:6px;background:#eef2f4;color:var(--if-ink-soft);
+  }
+  #if-krit .if-tag.if-formal{background:var(--if-blue-soft);color:var(--if-blue)}
+  #if-krit .if-tag.if-materiell{background:var(--if-green-soft);color:var(--if-green)}
+  #if-krit .if-chev{flex:0 0 auto;transition:.2s;opacity:.5}
+  #if-krit details[open] .if-chev{transform:rotate(90deg)}
+  #if-krit .if-body{padding:16px 18px 18px;border-top:1px solid var(--if-line);margin-top:-1px}
+  #if-krit .if-desc{margin:0 0 16px;color:#243642}
+
+  #if-krit .if-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  #if-krit .if-col{border:1px solid var(--if-line);border-radius:11px;padding:12px 13px;background:#fbfcfd}
+  #if-krit .if-col.if-dim{opacity:.32}
+  #if-krit .if-col h4{
+    margin:0 0 8px;font-family:inherit;font-size:.8rem;font-weight:700;line-height:1.3;
+    letter-spacing:.04em;text-transform:uppercase;
+    display:flex;align-items:center;gap:6px;
+  }
+  #if-krit .if-col[data-t="D"] h4{color:var(--if-d)}
+  #if-krit .if-col[data-t="L"] h4{color:var(--if-l)}
+  #if-krit .if-col[data-t="H"] h4{color:var(--if-h)}
+  #if-krit .if-mark{font-size:1.05rem;line-height:1}
+  #if-krit .if-col p{margin:0;font-size:.92rem;color:#33454f}
+  #if-krit .if-col p.if-focus{font-weight:700;color:var(--if-ink)}
+  #if-krit .if-col h4:last-child{margin-bottom:0}
+  #if-krit .if-col .if-plain{color:var(--if-ink-soft);font-style:italic}
+  #if-krit .if-badge-focus{
+    display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.06em;
+    background:#fff3cd;color:#7a5200;padding:2px 6px;border-radius:5px;margin-bottom:6px;
+  }
+  #if-krit .if-badge-opt{
+    display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.06em;
+    background:#eef2f4;color:var(--if-ink-soft);padding:2px 6px;border-radius:5px;margin-bottom:6px;
+  }
+
+  /* ---------- Förderumfang ---------- */
+  #if-krit .if-umfang{
+    margin-top:30px;background:var(--if-card);border:1px solid var(--if-line);
+    border-radius:var(--if-radius);padding:20px;box-shadow:var(--if-shadow);
+  }
+  #if-krit .if-umfang h2{margin:0 0 4px;font-family:inherit;font-size:1.15rem;color:var(--if-ink)}
+  #if-krit .if-umfang .if-hint{margin:0 0 16px;font-size:.9rem;color:var(--if-ink-soft)}
+  #if-krit .if-ugrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  #if-krit .if-ucard{border:1px solid var(--if-line);border-radius:11px;padding:14px;background:#fbfcfd}
+  #if-krit .if-ucard .if-h{font-size:1.45rem;font-weight:800;letter-spacing:-.02em}
+  #if-krit .if-ucard[data-t="D"] .if-h{color:var(--if-d)}
+  #if-krit .if-ucard[data-t="L"] .if-h{color:var(--if-l)}
+  #if-krit .if-ucard[data-t="H"] .if-h{color:var(--if-h)}
+  #if-krit .if-ucard .if-n{
+    font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--if-ink-soft);margin-bottom:6px;
+  }
+  #if-krit .if-ucard p{margin:6px 0 0;font-size:.86rem;color:var(--if-ink-soft)}
+
+  #if-krit mark{background:#fff2a8;color:inherit;padding:0 1px;border-radius:2px}
+  #if-krit .if-empty{
+    padding:26px;text-align:center;color:var(--if-ink-soft);background:var(--if-card);
+    border:1px dashed var(--if-line);border-radius:var(--if-radius);
+  }
+
+  @media (max-width:780px){
+    #if-krit .if-cols,#if-krit .if-ugrid{grid-template-columns:1fr}
+    #if-krit .if-tag{display:none}
+  }
+  @media print{
+    #if-krit{background:#fff}
+    #if-krit .if-toolbar,#if-krit .if-types,#if-krit .if-chev{display:none}
+    #if-krit details.if-crit{break-inside:avoid;box-shadow:none}
+    #if-krit .if-body{display:block !important}
+  }
+</style>
+</head>
+<body>
+<div id="if-krit">
+
+<header>
+  <h1>Förderkriterien und Projekttypen</h1>
+  <p class="if-sub">Innovationsfonds Digital Learning Hub Sek II – die sieben Förderkriterien und was sie für die drei Projekttypen bedeuten. Kriterium anklicken für Details.</p>
+  <p class="if-note"><b>Ablauf:</b> Die Geschäftsleitung des Innovationsfonds prüft nach Antragseingang die formalen Kriterien&nbsp;1 und&nbsp;2. Sind sie erfüllt, reicht sie den Antrag weiter an die Jury zur Bewertung der materiellen Kriterien&nbsp;3 bis&nbsp;7.</p>
+</header>
+
+<div class="if-types" role="group" aria-label="Projekttyp filtern">
+  <button type="button" class="if-type" data-t="D" aria-pressed="false">
+    <span class="if-letter">D</span><span class="if-tname">Digital Explorer</span>
+    <span class="if-thours">Fix 160 Arbeitsstunden · Pilot / Testlauf</span>
+  </button>
+  <button type="button" class="if-type" data-t="L" aria-pressed="false">
+    <span class="if-letter">L</span><span class="if-tname">Learning Incubator</span>
+    <span class="if-thours">160–800 Arbeitsstunden · Integration in den Alltag</span>
+  </button>
+  <button type="button" class="if-type" data-t="H" aria-pressed="false">
+    <span class="if-letter">H</span><span class="if-tname">Hub Scaler</span>
+    <span class="if-thours">160–400 Arbeitsstunden · Breite Nutzbarmachung</span>
+  </button>
+</div>
+
+<div class="if-toolbar">
+  <div class="if-search">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+    <input type="search" class="if-q" placeholder="Kriterien durchsuchen (z. B. «Evaluation», «Kompetenzen») …" aria-label="Kriterien durchsuchen">
+  </div>
+  <button type="button" class="if-btn if-openall">Alle aufklappen</button>
+  <button type="button" class="if-btn if-closeall">Alle zuklappen</button>
+</div>
+<p class="if-filterinfo"></p>
+
+<div class="if-list">
+
+  <p class="if-group-label">Formale Kriterien – Prüfung durch die Geschäftsleitung</p>
+
+  <details class="if-crit" id="if-k1">
+    <summary>
+      <span class="if-num">1</span>
+      <span class="if-ctitle">Teamarbeit</span>
+      <span class="if-tag if-formal">formal</span>
+      <svg class="if-chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M9 6l6 6-6 6"/></svg>
+    </summary>
+    <div class="if-body">
+      <p class="if-desc">Ein Unterrichtsprojekt wird von einer Lehrpersonengruppe gemeinsam entwickelt. Die Projektgruppe definiert die Rollen der einzelnen Mitglieder. Die entlastungsberechtigten Lehrpersonen sind an einer Schule der Sekundarstufe&nbsp;II des Kantons Zürich angestellt. Die Projektleitung verfügt über eine unbefristete Anstellung im Kanton Zürich.</p>
+      <div class="if-cols">
+        <div class="if-col" data-t="D"><h4><span class="if-mark">☑</span> Digital Explorer</h4></div>
+        <div class="if-col" data-t="L"><h4><span class="if-mark">☑</span> Learning Incubator</h4></div>
+        <div class="if-col" data-t="H"><h4><span class="if-mark">☑</span> Hub Scaler</h4><p>Erfordert <b>überschulische oder interdisziplinäre Kooperation</b>.</p></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="if-crit" id="if-k2">
+    <summary>
+      <span class="if-num">2</span>
+      <span class="if-ctitle">Unterstützung durch die Schulleitung</span>
+      <span class="if-tag if-formal">formal</span>
+      <svg class="if-chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M9 6l6 6-6 6"/></svg>
+    </summary>
+    <div class="if-body">
+      <p class="if-desc">Die Schulleitung wird über das Unterrichtsprojekt informiert und unterstützt es.</p>
+      <div class="if-cols">
+        <div class="if-col" data-t="D"><h4><span class="if-mark">☑</span> Digital Explorer</h4></div>
+        <div class="if-col" data-t="L"><h4><span class="if-mark">☑</span> Learning Incubator</h4></div>
+        <div class="if-col" data-t="H"><h4><span class="if-mark">☑</span> Hub Scaler</h4></div>
+      </div>
+    </div>
+  </details>
+
+  <p class="if-group-label">Materielle Kriterien – Bewertung durch die Jury</p>
+
+  <details class="if-crit" id="if-k3">
+    <summary>
+      <span class="if-num">3</span>
+      <span class="if-ctitle">Innovation</span>
+      <span class="if-tag if-materiell">materiell</span>
+      <svg class="if-chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M9 6l6 6-6 6"/></svg>
+    </summary>
+    <div class="if-body">
+      <p class="if-desc">Das Unterrichtsprojekt hat Innovationspotenzial. Es basiert auf einem neuen und zukunftsweisenden pädagogischen, didaktischen, technischen oder organisatorischen Ansatz. Das Projekt setzt zum Beispiel aktuelle Forschungsergebnisse um, entwickelt bestehende innovative Ansätze weiter oder verfolgt eine eigene neue Idee.</p>
+      <div class="if-cols">
+        <div class="if-col" data-t="D"><h4><span class="if-mark">☑</span> Digital Explorer</h4><span class="if-badge-focus">Fokus</span><p class="if-focus">Ausprobieren von Innovation (Pilot / Testlauf).</p></div>
+        <div class="if-col" data-t="L"><h4><span class="if-mark">☑</span> Learning Incubator</h4><p>Integration einer irgendwo schon getesteten Innovation im Schulalltag.</p></div>
+        <div class="if-col" data-t="H"><h4><span class="if-mark">☑</span> Hub Scaler</h4><p>Erleichtert den Zugang zu bewährter schulischer Innovation.</p></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="if-crit" id="if-k4">
+    <summary>
+      <span class="if-num">4</span>
+      <span class="if-ctitle">Didaktisches / organisatorisches Konzept</span>
+      <span class="if-tag if-materiell">materiell</span>
+      <svg class="if-chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M9 6l6 6-6 6"/></svg>
+    </summary>
+    <div class="if-body">
+      <p class="if-desc">Das didaktische bzw. unterrichtsorganisatorische Konzept bildet den Kern des Unterrichtsprojekts. Es verbindet Innovation und Digitalität sowie die potenziell breite und langfristige Nutzung. Es zeigt auf, welche fachlichen und überfachlichen Kompetenzen gefördert werden, wie diese evaluiert werden und welche Rolle die Technik und die Lehrpersonen dabei spielen.</p>
+      <div class="if-cols">
+        <div class="if-col" data-t="D"><h4><span class="if-mark">☑</span> Digital Explorer</h4><p>Die Innovation fördert das Lernen direkt didaktisch oder indirekt organisatorisch.</p></div>
+        <div class="if-col" data-t="L"><h4><span class="if-mark">☑</span> Learning Incubator</h4><span class="if-badge-focus">Fokus</span><p class="if-focus">Didaktische oder organisatorische Effektivität / Effizienz bezüglich bestimmter Kompetenzen.</p></div>
+        <div class="if-col" data-t="H"><h4><span class="if-mark">☑</span> Hub Scaler</h4><p>Überträgt bewährte Ansätze auf andere Fächer / Lehrgänge.</p></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="if-crit" id="if-k5">
+    <summary>
+      <span class="if-num">5</span>
+      <span class="if-ctitle">Digitalität</span>
+      <span class="if-tag if-materiell">materiell</span>
+      <svg class="if-chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M9 6l6 6-6 6"/></svg>
+    </summary>
+    <div class="if-body">
+      <p class="if-desc">Im Unterrichtsprojekt werden digitale Kompetenzen gefördert: Anwendungskompetenz, Medienkompetenz oder Informatikkompetenz. Digitale Medien werden zur Förderung von konstruktiven und interaktiven Lernaktivitäten im Wechselspiel mit analogen Unterrichtsmethoden eingesetzt.</p>
+      <div class="if-cols">
+        <div class="if-col" data-t="D"><h4><span class="if-mark">☑</span> Digital Explorer</h4><p>Erkunden der digitalen Potenziale.</p></div>
+        <div class="if-col" data-t="L"><h4><span class="if-mark">☑</span> Learning Incubator</h4><p>Integration der digitalen Mittel.</p></div>
+        <div class="if-col" data-t="H"><h4><span class="if-mark">☑</span> Hub Scaler</h4><p>Breite und langfristige Nutzbarmachung.</p></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="if-crit" id="if-k6">
+    <summary>
+      <span class="if-num">6</span>
+      <span class="if-ctitle">Evaluation</span>
+      <span class="if-tag if-materiell">materiell</span>
+      <svg class="if-chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M9 6l6 6-6 6"/></svg>
+    </summary>
+    <div class="if-body">
+      <p class="if-desc">Das Unterrichtsprojekt wird mindestens einmal mit einer Klasse durchgeführt, reflektiert und evaluiert. Das Projekt gilt als abgeschlossen, wenn die Evaluation erfolgt ist. Dies soll innerhalb von drei Jahren der Fall sein.</p>
+      <div class="if-cols">
+        <div class="if-col" data-t="D"><h4><span class="if-mark">☑</span> Digital Explorer</h4><p>Fokus auf Vertiefungspotenzial getesteter Ansätze.</p></div>
+        <div class="if-col" data-t="L"><h4><span class="if-mark">☑</span> Learning Incubator</h4><p>Fokus auf Lern- oder Lehrarbeitsverbesserung.</p></div>
+        <div class="if-col" data-t="H"><h4><span class="if-mark">☑</span> Hub Scaler</h4><p>Fokus auf breite und langfristige Nutzung.</p></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="if-crit" id="if-k7">
+    <summary>
+      <span class="if-num">7</span>
+      <span class="if-ctitle">Breite und langfristige Nutzung</span>
+      <span class="if-tag if-materiell">materiell</span>
+      <svg class="if-chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M9 6l6 6-6 6"/></svg>
+    </summary>
+    <div class="if-body">
+      <p class="if-desc">Das Unterrichtsprojekt ist für viele Lehrpersonen innerhalb eines Fachgebiets oder auch fachübergreifend anwendbar und auf lange Frist nutzbar (für Digital-Explorer-Projekte fakultativ).</p>
+      <div class="if-cols">
+        <div class="if-col" data-t="D"><h4><span class="if-mark">☐</span> Digital Explorer</h4><p>Fakultativ.</p></div>
+        <div class="if-col" data-t="L"><h4><span class="if-mark">☑</span> Learning Incubator</h4><p>Ist angedacht.</p></div>
+        <div class="if-col" data-t="H"><h4><span class="if-mark">☑</span> Hub Scaler</h4><span class="if-badge-focus">Fokus</span><p>Breite und langfristige Nutzbarmachung.</p></div>
+      </div>
+    </div>
+  </details>
+
+</div>
+
+<p class="if-empty if-hide">Keine Kriterien gefunden. Suchbegriff anpassen.</p>
+
+<section class="if-umfang">
+  <h2>Förderumfang</h2>
+  <p class="if-hint">Mögliche Entlastung pro Projekt.</p>
+  <div class="if-ugrid">
+    <div class="if-ucard" data-t="D">
+      <div class="if-n">Digital Explorer</div>
+      <div class="if-h">160 Std.</div>
+      <p>Fixe Entlastung von 160 Arbeitsstunden. Max. 80 Arbeitsstunden pro Lehrperson und Jahr.</p>
+    </div>
+    <div class="if-ucard" data-t="L">
+      <div class="if-n">Learning Incubator</div>
+      <div class="if-h">160–800 Std.</div>
+      <p>Arbeitsstunden je nach Umfang des Projekts.</p>
+    </div>
+    <div class="if-ucard" data-t="H">
+      <div class="if-n">Hub Scaler</div>
+      <div class="if-h">160–400 Std.</div>
+      <p>Arbeitsstunden je nach Umfang des Projekts.</p>
+    </div>
+  </div>
+</section>
+
+</div>
+<script>
+/* ===================================================================
+   Innovationsfonds DLH – Förderkriterien: Filter, Suche, Auf-/Zuklappen
+   Einbettungsfest gebaut:
+   - alles auf #if-krit begrenzt, keine globalen DOM-Abfragen
+   - Event-Delegation am Wrapper (übersteht Re-Rendering durch Builder)
+   - preventDefault, damit ein umgebendes <form> nicht abgeschickt wird
+   - Init laeuft auch, wenn das DOM schon fertig ist; Wiederholversuche
+     fuer spaet eingefuegtes Markup; doppelte Initialisierung verhindert
+   - jede Funktion mit Null-Guards: fehlt ein Element, laeuft der Rest
+   =================================================================== */
+(function () {
+  'use strict';
+
+  var ROOT_ID = 'if-krit';
+  var NAMES = { D: 'Digital Explorer', L: 'Learning Incubator', H: 'Hub Scaler' };
+
+  function closest(el, sel) {
+    while (el && el.nodeType === 1) {
+      if (el.matches && el.matches(sel)) return el;
+      el = el.parentNode;
+    }
+    return null;
+  }
+  function escRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+  function escHtml(s) {
+    return s.replace(/[&<>]/g, function (c) {
+      return c === '&' ? '&amp;' : (c === '<' ? '&lt;' : '&gt;');
+    });
+  }
+  function warn(e) { if (window.console && console.warn) console.warn('[if-krit]', e); }
+
+  function init() {
+    var root = document.getElementById(ROOT_ID);
+    if (!root) return false;
+    if (root.getAttribute('data-if-init') === '1') return true;
+    root.setAttribute('data-if-init', '1');
+
+    var active = null;
+
+    /* Kindelemente werden bei jedem Zugriff neu gesucht, damit auch
+       nachtraeglich eingefuegte oder ersetzte Inhalte erfasst werden. */
+    function all(sel) { return Array.prototype.slice.call(root.querySelectorAll(sel)); }
+    function one(sel) { return root.querySelector(sel); }
+    function crits() { return all('details.if-crit'); }
+
+    function clearMarks(node) {
+      var marks = Array.prototype.slice.call(node.querySelectorAll('mark'));
+      for (var i = 0; i < marks.length; i++) {
+        marks[i].parentNode.replaceChild(document.createTextNode(marks[i].textContent), marks[i]);
+      }
+      if (marks.length && node.normalize) node.normalize();
+    }
+
+    /* Treffer per DOM-Knoten markieren – kein innerHTML, also kein
+       Risiko, dass Suchtext als HTML interpretiert wird. */
+    function highlight(node, re) {
+      var kids = Array.prototype.slice.call(node.childNodes);
+      for (var i = 0; i < kids.length; i++) {
+        var n = kids[i];
+        if (n.nodeType === 3) {
+          var txt = n.nodeValue, frag = null, last = 0, m;
+          re.lastIndex = 0;
+          while ((m = re.exec(txt)) !== null) {
+            if (!m[0].length) { re.lastIndex++; continue; }
+            if (!frag) frag = document.createDocumentFragment();
+            if (m.index > last) frag.appendChild(document.createTextNode(txt.slice(last, m.index)));
+            var mk = document.createElement('mark');
+            mk.appendChild(document.createTextNode(m[0]));
+            frag.appendChild(mk);
+            last = m.index + m[0].length;
+          }
+          if (frag) {
+            if (last < txt.length) frag.appendChild(document.createTextNode(txt.slice(last)));
+            n.parentNode.replaceChild(frag, n);
+          }
+        } else if (n.nodeType === 1) {
+          var tag = (n.tagName || '').toUpperCase();
+          if (tag !== 'MARK' && tag !== 'SVG' && tag !== 'SCRIPT' && tag !== 'STYLE') highlight(n, re);
+        }
+      }
+    }
+
+    function render() {
+      var q = one('.if-q');
+      var term = q ? q.value.replace(/^\s+|\s+$/g, '') : '';
+      var re = term ? new RegExp(escRe(term), 'gi') : null;
+      var list = crits();
+      var shown = 0;
+
+      for (var i = 0; i < list.length; i++) {
+        var d = list[i];
+        clearMarks(d);
+        var hit = !term || d.textContent.toLowerCase().indexOf(term.toLowerCase()) > -1;
+        d.style.display = hit ? '' : 'none';
+        if (hit) {
+          shown++;
+          if (re) { d.open = true; highlight(d, re); }
+        }
+      }
+
+      var empty = one('.if-empty');
+      if (empty) empty.classList.toggle('if-hide', shown > 0);
+
+      var labels = all('.if-group-label');
+      for (var j = 0; j < labels.length; j++) labels[j].style.display = term ? 'none' : '';
+
+      var info = one('.if-filterinfo');
+      if (info) {
+        var parts = [];
+        if (active) parts.push('Gefiltert auf <b>' + NAMES[active] + '</b>');
+        if (term) parts.push('<b>' + shown + '</b> von ' + list.length +
+                             ' Kriterien passen zu «' + escHtml(term) + '»');
+        info.innerHTML = parts.join(' · ') ||
+          'Alle drei Projekttypen werden angezeigt. Auf eine Karte klicken, um zu filtern.';
+      }
+    }
+
+    function applyType() {
+      var btns = all('.if-type'), i;
+      for (i = 0; i < btns.length; i++) {
+        btns[i].setAttribute('aria-pressed', String(btns[i].getAttribute('data-t') === active));
+      }
+      var boxes = all('.if-col').concat(all('.if-ucard'));
+      for (i = 0; i < boxes.length; i++) {
+        boxes[i].classList.toggle('if-hide', !!active && boxes[i].getAttribute('data-t') !== active);
+      }
+      render();
+    }
+
+    function setOpen(state) {
+      var list = crits();
+      for (var i = 0; i < list.length; i++) list[i].open = state;
+    }
+
+    /* ---- Ereignisse: delegiert am Wrapper ---- */
+    root.addEventListener('click', function (ev) {
+      try {
+        var t = closest(ev.target, '.if-type');
+        if (t) {
+          ev.preventDefault();
+          var key = t.getAttribute('data-t');
+          active = (active === key) ? null : key;
+          applyType();
+          if (active) setOpen(true);
+          return;
+        }
+        if (closest(ev.target, '.if-openall'))  { ev.preventDefault(); setOpen(true);  return; }
+        if (closest(ev.target, '.if-closeall')) { ev.preventDefault(); setOpen(false); return; }
+      } catch (e) { warn(e); }
+    }, false);
+
+    root.addEventListener('input', function (ev) {
+      try { if (closest(ev.target, '.if-q')) render(); } catch (e) { warn(e); }
+    }, false);
+
+    /* Enter im Suchfeld darf ein umgebendes Formular nicht abschicken */
+    root.addEventListener('keydown', function (ev) {
+      if ((ev.key === 'Enter' || ev.keyCode === 13) && closest(ev.target, '.if-q')) {
+        ev.preventDefault();
+      }
+    }, false);
+
+    try { render(); } catch (e) { warn(e); }
+    return true;
+  }
+
+  /* ---- Start: sofort, bei DOMContentLoaded, bei load, plus Nachversuche ---- */
+  var tries = 0;
+  function boot() {
+    var ok = false;
+    try { ok = init(); } catch (e) { warn(e); ok = true; }
+    if (!ok && ++tries < 20) setTimeout(boot, 250);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot, false);
+  } else {
+    boot();
+  }
+  window.addEventListener('load', boot, false);
+})();
+</script>
+</body>
+</html>
